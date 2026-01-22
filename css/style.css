@@ -3,3 +3,83 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: rgb(238, 200, 151);
+}
+
+.title-page {
+  background-color: inherit;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 48px;
+  margin-top: 60px;
+  letter-spacing: 3px;
+  font-style: oblique;
+}
+
+.btn {
+  width: 150px;
+  padding: 10px;
+  margin: 30px auto 0 auto;
+  display: block;
+  border-radius: 14px;
+  background-color: orange;
+  border: 2px black solid;
+  color: black;
+  box-shadow: 3px 3px 3px black;
+  transition: all 0.4s linear;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  transition: transform 0.4s linear;
+}
+
+.main-sec {
+  padding: 10px;
+}
+
+#subcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 900px;
+  width: 100%;
+  margin: 30px auto;
+  justify-content: space-between;
+}
+
+#subcontainer > div {
+  width: calc(100% / 2 - (20px * 1 / 2));
+  border: 2px orange solid;
+  text-align: center;
+  color: orange;
+  background-color: rgb(56, 46, 38);
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 2px 2px 2px grey;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  #subcontainer > div {
+    width: calc(100% / 3 - (20px * 2 / 3));
+  }
+  #subcontainer {
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #subcontainer > div {
+    width: calc(100% / 4 - (20px * 3 / 4));
+  }
+  #subcontainer {
+    justify-content: center;
+  }
+}

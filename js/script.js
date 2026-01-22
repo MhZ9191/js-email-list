@@ -15,17 +15,32 @@ Bonus
 const subContainer = document.getElementById("subcontainer");
 const btn = document.querySelector(".btn");
 const regenerateBtn = document.querySelector(".regenerate");
-btn.addEventListener("click", generate);
 
+//pulsante genera prime 10 mail
+btn.addEventListener("click", () => {
+  btn.classList.add("hidden");
+  subContainer.classList.add("hidden");
+  generate();
+  regenerateBtn.classList.remove("hidden");
+  subContainer.classList.remove("hidden");
+});
+
+//pulsante che le rigenera
 regenerateBtn.addEventListener("click", () => {
   for (let i = 0; i < 10; i++) {
     const firstC = subContainer.firstChild;
     subContainer.removeChild(firstC);
   }
+  btn.classList.add("hidden");
+  subContainer.classList.add("hidden");
   generate();
+  regenerateBtn.classList.remove("hidden");
+  subContainer.classList.remove("hidden");
 });
 
 function generate() {
+  //     btn.classList.add("hidden");
+  //   subContainer.classList.add("hidden");
   for (let i = 0; i < 10; i++) {
     axios
       .get("https://flynn.boolean.careers/exercises/api/random/mail")
@@ -34,6 +49,9 @@ function generate() {
         divMailGenerator(mail);
       });
   }
+
+  //   regenerateBtn.classList.remove("hidden");
+  //   subContainer.classList.remove("hidden");
 }
 
 function divMailGenerator(mail) {
