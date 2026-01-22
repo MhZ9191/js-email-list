@@ -14,7 +14,6 @@ Bonus
 
 const subContainer = document.getElementById("subcontainer");
 const btn = document.querySelector(".btn");
-const test = document.createElement("div");
 
 btn.addEventListener("click", generate);
 
@@ -24,7 +23,9 @@ function generate() {
       .get("https://flynn.boolean.careers/exercises/api/random/mail")
       .then((res) => {
         const mail = res.data.response;
-        console.log(mail);
+        const test = document.createElement("div");
+        test.innerText = mail;
+        subContainer.append(test);
       });
   }
 }
