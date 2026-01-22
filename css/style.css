@@ -75,11 +75,11 @@ body {
   }
 }
 
-@media screen and (min-width: 992px) {
+/* @media screen and (min-width: 992px) {
   #subcontainer > div {
     width: calc(100% / 4 - (20px * 3 / 4));
   }
   #subcontainer {
     justify-content: center;
   }
-}
+} */
